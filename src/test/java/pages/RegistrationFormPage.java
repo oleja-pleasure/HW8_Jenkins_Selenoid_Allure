@@ -21,7 +21,7 @@ public class RegistrationFormPage {
             state = $("#state"),
             city = $("#city");
 
-    public void fillForm(RegistrationFormData formData){
+    public void fillForm(RegistrationFormData formData) {
         open("https://demoqa.com/automation-practice-form");
         firstName.val(formData.fn);
         lastName.val(formData.ln);
@@ -44,7 +44,7 @@ public class RegistrationFormPage {
         $("#submit").click();
     }
 
-    public void checkForm(RegistrationFormData formData){
+    public void checkForm(RegistrationFormData formData) {
         $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
         $x("//td[text()='Student Name']").parent().shouldHave(text(formData.fn + ' ' + formData.ln));
         $x("//td[text()='Student Email']").parent().shouldHave(text(formData.email));
