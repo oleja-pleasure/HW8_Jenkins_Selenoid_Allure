@@ -1,5 +1,6 @@
 package tests;
 
+import pages.RegistrationFormData;
 import pages.RegistrationFormPage;
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.AfterAll;
@@ -14,7 +15,6 @@ public class TestWithPageObject {
     static void setUpConfig() {
         Configuration.browser = "chrome";
         Configuration.startMaximized = true;
-        open("https://demoqa.com/automation-practice-form");
     }
 
     @Test

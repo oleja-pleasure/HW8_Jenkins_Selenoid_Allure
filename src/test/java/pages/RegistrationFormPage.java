@@ -1,12 +1,10 @@
 package pages;
 
 import com.codeborne.selenide.SelenideElement;
-import tests.RegistrationFormData;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.$x;
+import static com.codeborne.selenide.Selenide.*;
 
 public class RegistrationFormPage {
     SelenideElement firstName = $("#firstName"),
@@ -24,6 +22,7 @@ public class RegistrationFormPage {
             city = $("#city");
 
     public void fillForm(RegistrationFormData formData){
+        open("https://demoqa.com/automation-practice-form");
         firstName.val(formData.fn);
         lastName.val(formData.ln);
         email.val(formData.email);
