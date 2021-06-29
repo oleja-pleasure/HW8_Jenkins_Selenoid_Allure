@@ -9,11 +9,11 @@ repositories {
 
 dependencies {
     testImplementation (
-            "com.codeborne:selenide:5.19.0",
-            "org.junit.jupiter:junit-jupiter-api:5.7.1",
+            "com.codeborne:selenide:5.22.1",
+            "org.junit.jupiter:junit-jupiter-api:5.8.0-M1",
             "com.github.javafaker:javafaker:1.0.2"
     )
-    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:5.7.1"
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:5.8.0-M1"
 }
 
 allure {
@@ -24,6 +24,12 @@ allure {
     useJUnit5 {
         version = '2.14.0'
     }
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
 }
 
 test {
