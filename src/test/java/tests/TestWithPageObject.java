@@ -15,6 +15,7 @@ public class TestWithPageObject {
     static void setUpConfig() {
         Configuration.browser = "chrome";
         Configuration.startMaximized = true;
+        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub/";
     }
 
     @Test
