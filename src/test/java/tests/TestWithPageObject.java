@@ -18,8 +18,10 @@ public class TestWithPageObject {
 
     @BeforeAll
     static void setUpConfig() {
+        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
         Configuration.browser = "chrome";
         Configuration.startMaximized = true;
+
         DesiredCapabilities capabilities = new DesiredCapabilities();
 
         capabilities.setCapability("enableVNC", true);
@@ -27,7 +29,7 @@ public class TestWithPageObject {
 
         Configuration.browserCapabilities = capabilities;
         Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub/";
-        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
+
     }
 
     @Test
