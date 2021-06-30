@@ -2,12 +2,12 @@ package tests;
 
 import com.codeborne.selenide.logevents.SelenideLogger;
 import helpers.Attach;
+import org.junit.jupiter.api.AfterEach;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import pages.RegistrationFormData;
 import pages.RegistrationFormPage;
 import com.codeborne.selenide.Configuration;
 import io.qameta.allure.selenide.AllureSelenide;
-import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -42,8 +42,8 @@ public class TestWithPageObject {
 
     }
 
-    @AfterAll
-    static void closeBrowser() {
+    @AfterEach
+    void closeBrowser() {
         String sessionId = getSessionId();
         Attach.screenshotAs("Last screenshot");
         Attach.pageSource();
